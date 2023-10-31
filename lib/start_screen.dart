@@ -1,42 +1,53 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  StartScreen({super.key});
+  const StartScreen({super.key});
+
+  final imagePath = 'assets/images/quiz-logo.png';
+  final infoText = 'Learn Flutter in the fun way';
+  final textBtn = 'Start Quiz';
+
+  Function onPressed() {
+    return () {
+      print("Pressed");
+    };
+  }
 
   @override
   Widget build(context) {
-    return Container(
+    return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/quiz-logo.png'),
-          SizedBox(
-            height: 20,
+          Image.asset(
+            imagePath,
+            width: 300,
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
+          // Alternative solution for adding opacity to an image
+          // Opacity(
+          //   opacity: 0.1,
+          //   child: Image.asset(
+          //     imagePath,
+          //     width: 300,
+          //   ),
+          // ),
+          const SizedBox(height: 80),
           Text(
-            'Learn Flutter in the fun wa y',
-            style: TextStyle(
+            infoText,
+            style: const TextStyle(
               fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.purple[600],
+              color: Color.fromARGB(255, 237, 223, 252),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              foregroundColor: Colors.purple[300],
-              backgroundColor: Colors.purple[300],
+          const SizedBox(height: 30),
+          OutlinedButton.icon(
+            onPressed: onPressed,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
             ),
-            child: Text(
-              'Start Quiz',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-            ),
+            icon: const Icon(Icons.arrow_forward),
+            label: Text(textBtn),
           ),
         ],
       ),
