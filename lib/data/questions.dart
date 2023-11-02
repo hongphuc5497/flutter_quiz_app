@@ -1,5 +1,7 @@
 import 'package:flutter_quiz_app/models/quiz_question.dart';
 
+// The correct answer always is the first item in the answers list
+
 const questions = [
   QuizQuestion(
     'What are the main building blocks of Flutter UIs?',
