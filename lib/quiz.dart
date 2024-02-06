@@ -46,7 +46,7 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           // child: activeScreen, // First approach
-          child: activeScreen == 'start-screen' ? StartScreen(switchScreen) : QuestionsScreen(),
+          child: activeScreen == 'start-screen' ? StartScreen(switchScreen) : const QuestionsScreen(),
         ),
       ),
     );
